@@ -21,6 +21,7 @@ func main() {
     if len(urlParts) > 1 {
         url = urlParts[1]
     }
+    url = strings.TrimSuffix(url, "/")
     urlDecoded, err := base64.StdEncoding.DecodeString(url)
     if err != nil {
         fmt.Println("URL decode failed: ", err)
